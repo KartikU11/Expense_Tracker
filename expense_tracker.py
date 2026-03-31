@@ -50,14 +50,14 @@ def get_user_expense():
 
 def save_expense_to_file(expense: Expense, expense_file_path):
     print(f"🎯 Saving User Expense: {expense} to {expense_file_path}")
-    with open(expense_file_path, "a") as f:
+    with open(expense_file_path, "a", encoding="utf-8") as f:
         f.write(f"{expense.name},{expense.amount},{expense.category}\n")
 
 
 def summarize_expenses(expense_file_path, budget):
     print(f"🎯 Summarizing User Expense")
     expenses: list[Expense] = []
-    with open(expense_file_path, "r") as f:
+    with open(expense_file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
         for line in lines:
             expense_name, expense_amount, expense_category = line.strip().split(",")
