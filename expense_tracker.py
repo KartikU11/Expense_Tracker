@@ -6,7 +6,7 @@ import datetime
 def main():
     print(f"🎯 Running Expense Tracker!")
     expense_file_path = "expenses.csv"
-    budget = 2000
+    budget = 20000
 
     # Get user input for expense.
     expense = get_user_expense()
